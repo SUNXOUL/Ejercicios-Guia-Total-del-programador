@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Capitulo-3/1.0.0": {
+        "runtime": {
+          "Capitulo-3.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Capitulo-3/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
