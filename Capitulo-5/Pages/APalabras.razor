@@ -1,21 +1,31 @@
-﻿@page "/counter"
+﻿@page "/ToWords"
 
 <PageTitle>A Palabras</PageTitle>
 
-<h1>ToWords</h1>
+<h1>ToWords (Max: 999)</h1>
 
+<div class="input-group mb-3">
+    <input type="text" class="form-control" @bind="Numero" placeholder="Valor">
+    <button class="btn btn-outline-primary" @onclick="ToWords" type="button">En Palabras</button>
+</div>
+
+<Center>
+<h6>RESULTADO</h6>
+<h1>@EnPalabras</h1>
+</Center>
 
 
 @code {
+    
 
     public string Numero;
     public string EnPalabras;
 
     public string[] Unidades = new string[]{"Uno","Dos","Tres","Cuatro","Cinco","Seis","Siete","Ocho","Nueve"};
-    public string[] Especiales = new string[]{"Cero","Once","Doce","Trece","y"};
+    public string[] Especiales = new string[]{"Cero","Once","Doce","Trece","Catorce","Quince"};
     public string[] Decenas = new string[]{"Diez","Veinte","Treinta","Cuarenta","Cincuenta","Sesenta","Setenta","Ochenta","Noventa"};
-    public string[] Centenas = new string[]{"Cien","Docientos","Trecientos","Cuatrocientos","Quinientos","Ochocientos","Novecientos"};
-    public string[] muletas = new string[]{"Dieci","Veinti","Treinti","Cuarenti","Cincuenti","Sesenti","Setenti","Ochenti","Noventi","Mil"};
+    public string[] Centenas = new string[]{"Cien","Docientos","Trecientos","Cuatrocientos","Quinientos","Seiscientos","Setecientos","Ochocientos","Novecientos"};
+    public string[] Muletas = new string[]{"Dieci","Veinti","Treinti","Cuarenti","Cincuenti","Sesenti","Setenti","Ochenti","Noventi"};
 
     public void ToWords()
     {
@@ -34,27 +44,62 @@
             this.EnPalabras=Especiales[3];
             return;
         }
-        if(Numero=="0")
+        if(Numero=="14")
+        {
+            this.EnPalabras=Especiales[4];
+            return;
+        }
+        if(Numero=="15")
+        {
+            this.EnPalabras=Especiales[5];
+            return;
+        }
+        if(Convert.ToInt32($"{Numero[0]}")==0)
         {
             this.EnPalabras=Especiales[0];
             return;
         }
 
+        switch(Numero.Length)
+        {
+            case 1:
+                this.EnPalabras=Unidades[Convert.ToInt32(Numero)-1];
+            break;
 
-            for(int i = Numero.Length; i-1>=0;i--)
-            {
-                if(i- Numero.Length==0 && EnPalabras[i]!='0')
+            case 2:
+                if(Convert.ToInt32($"{Numero[1]}")!=0)
                 {
-                    this.EnPalabras=$"{Unidades[(Convert.ToInt32(EnPalabras[i]))+1]}";
+                    this.EnPalabras=$"{Muletas[Convert.ToInt32($"{Numero[0]}")-1]} {Unidades[Convert.ToInt32($"{Numero[1]}")-1]}";
+                }
+                else
+                {
+                    this.EnPalabras=$"{Decenas[Convert.ToInt32($"{Numero[0]}")-1]}";
+                }
+            break;
+
+            case 3:
+                if(Convert.ToInt32($"{Numero[1]}")!=0 && Convert.ToInt32($"{Numero[2]}")!=0)
+                {
+                    this.EnPalabras=$"{Centenas[Convert.ToInt32($"{Numero[0]}")-1]} {Muletas[Convert.ToInt32($"{Numero[1]}")-1]} {Unidades[Convert.ToInt32($"{Numero[2]}")-1]}";
+                }
+                else if(Convert.ToInt32($"{Numero[1]}")!=0 && Convert.ToInt32($"{Numero[2]}")==0) {
+                    this.EnPalabras=$"{Centenas[Convert.ToInt32($"{Numero[0]}")-1]} {Decenas[Convert.ToInt32($"{Numero[1]}")-1]}";
+                }
+                else if(Convert.ToInt32($"{Numero[1]}")==0 && Convert.ToInt32($"{Numero[2]}")!=0) {
+                    this.EnPalabras=$"{Centenas[Convert.ToInt32($"{Numero[0]}")-1]} {Unidades[Convert.ToInt32($"{Numero[2]}")-1]}";
+                }
+                else if(Convert.ToInt32($"{Numero[1]}")==0 && Convert.ToInt32($"{Numero[2]}")==0) {
+                    this.EnPalabras=$"{Centenas[Convert.ToInt32($"{Numero[0]}")-1]}";
                 }
 
-                if(Numero.Length -i ==1 && EnPalabras[i]!='0')
-                {
-                    this.EnPalabras=$"{Unidades[(Convert.ToInt32(EnPalabras[i]))+1]}";
-                }
+            break;
+
+            default:
+                this.EnPalabras="Numero No Contenido en este Programa";
+            break;
+        }
 
 
-            }
 
     }
 
