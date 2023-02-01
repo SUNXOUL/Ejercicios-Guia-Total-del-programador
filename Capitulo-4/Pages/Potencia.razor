@@ -1,0 +1,35 @@
+﻿@page "/Potencia"
+
+ <div class="mb-3 mt-3">
+      <h1  class="form-label">Edades Promedio</h1>
+      <form>
+    <div class="input-group">
+      <span class="input-group-text">Base</span>
+      <input type="text" @bind="Base" class="form-control" >
+    </div>
+    <div class="input-group">
+      <span class="input-group-text">Exponente</span>
+      <input type="text" @bind="Exponente" class="form-control">
+    </div>
+    </form>
+  </div>
+
+  <button class="btn btn-primary" @onclick="Calcular">Calcular</button>
+
+
+<Center>
+<h6>RESULTADO</h6>
+<H1>@Resultado</H1>
+</Center>
+@code {
+
+    public double Base;
+    public double Exponente;
+
+    public double Resultado;
+
+    public void Calcular()
+    {
+        Resultado= Math.Pow(Base,Exponente);
+    }
+}

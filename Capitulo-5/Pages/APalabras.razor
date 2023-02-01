@@ -1,0 +1,61 @@
+﻿@page "/counter"
+
+<PageTitle>A Palabras</PageTitle>
+
+<h1>ToWords</h1>
+
+
+
+@code {
+
+    public string Numero;
+    public string EnPalabras;
+
+    public string[] Unidades = new string[]{"Uno","Dos","Tres","Cuatro","Cinco","Seis","Siete","Ocho","Nueve"};
+    public string[] Especiales = new string[]{"Cero","Once","Doce","Trece","y"};
+    public string[] Decenas = new string[]{"Diez","Veinte","Treinta","Cuarenta","Cincuenta","Sesenta","Setenta","Ochenta","Noventa"};
+    public string[] Centenas = new string[]{"Cien","Docientos","Trecientos","Cuatrocientos","Quinientos","Ochocientos","Novecientos"};
+    public string[] muletas = new string[]{"Dieci","Veinti","Treinti","Cuarenti","Cincuenti","Sesenti","Setenti","Ochenti","Noventi","Mil"};
+
+    public void ToWords()
+    {
+        if(Numero=="11")
+        {
+            this.EnPalabras=Especiales[1];
+            return;
+        }
+        if(Numero=="12")
+        {
+            this.EnPalabras=Especiales[2];
+            return;
+        }
+        if(Numero=="13")
+        {
+            this.EnPalabras=Especiales[3];
+            return;
+        }
+        if(Numero=="0")
+        {
+            this.EnPalabras=Especiales[0];
+            return;
+        }
+
+
+            for(int i = Numero.Length; i-1>=0;i--)
+            {
+                if(i- Numero.Length==0 && EnPalabras[i]!='0')
+                {
+                    this.EnPalabras=$"{Unidades[(Convert.ToInt32(EnPalabras[i]))+1]}";
+                }
+
+                if(Numero.Length -i ==1 && EnPalabras[i]!='0')
+                {
+                    this.EnPalabras=$"{Unidades[(Convert.ToInt32(EnPalabras[i]))+1]}";
+                }
+
+
+            }
+
+    }
+
+}

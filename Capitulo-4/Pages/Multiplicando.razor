@@ -1,0 +1,52 @@
+﻿@page "/Tablademultiplicar"
+@using Ejercicio5.Data
+@inject WeatherForecastService ForecastService
+
+<PageTitle>Tabla de multiplicar </PageTitle>
+
+
+  <div class="mb-3 mt-3">
+    <h1  class="form-label">Tablas de multiplicar</h1>
+    <input  class="form-control"  @bind="Numero" placeholder="Numero" name="Numero">
+  </div>
+  <button class="btn btn-primary" @onclick="Generar">Generar Tabla</button>
+<hr>
+
+<table  style="width: 50%;">
+    <thead>
+        <tr>
+            <th>Multiplicando</th>
+            <th></th>
+            <th>Multiplicador</th>
+            <th>Resultado</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        @foreach (var item in  Tabla)
+        {
+            int i = @Tabla.IndexOf(item)+1;
+            <tr>
+                <td>@Numero</td>
+                <td>X</td>
+                <td>@i</td>
+                <td>@item</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code
+{
+    int? Numero;
+    List<int?> Tabla = new();
+
+    public void Generar()
+    {
+        Tabla.Clear();
+        for (int i = 0 ; i < 10; i++)
+        {
+            Tabla.Add(Numero*(i+1));
+        }
+    }
+}

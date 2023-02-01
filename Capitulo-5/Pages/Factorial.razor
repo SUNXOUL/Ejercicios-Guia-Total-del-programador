@@ -1,0 +1,30 @@
+﻿@page "/"
+
+<PageTitle>Factorial</PageTitle>
+
+<h1>Factorial</h1>
+<div class="input-group mb-3">
+    <input type="text" class="form-control" @bind="Valor" placeholder="Valor">
+    <button class="btn btn-outline-primary" @onclick="Calcular" type="button">Calcular</button>
+</div>
+
+<Center>
+<h6>RESULTADO</h6>
+<H1>@Resultado</H1>
+</Center>
+
+@code{
+
+    public int? Valor;
+    public int? Resultado;
+    public void Calcular()
+    {
+        Resultado =1;
+
+        for(int i = 1; i<=Valor;i++)
+        {
+            Resultado *=i;
+        }
+    }
+
+}

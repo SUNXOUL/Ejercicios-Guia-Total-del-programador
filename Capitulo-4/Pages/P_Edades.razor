@@ -1,0 +1,54 @@
+﻿@page "/"
+
+<PageTitle>Edades Promedio</PageTitle>
+
+
+  <div class="mb-3 mt-3">
+    <h1  class="form-label">Edades Promedio</h1>
+    <input  class="form-control"  @bind="edad" placeholder="Ingrese Edad" name="Edades">
+  </div>
+  <button class="btn btn-primary" @onclick="Agregar">Agregar</button>
+
+<hr>
+<label >Promedio: @promedio</label>
+<hr>
+
+<table >
+    <thead>
+        <tr>
+            <th>Edad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in  Edades)
+        {
+            <tr>
+                <td>@item</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code
+{
+    public int? edad;
+    public double? promedio =0;
+    public List<int?> Edades = new ();
+    
+    public void Agregar()
+    {
+        Edades.Add(edad);
+        this.edad=null;
+        CalPromedio();
+    
+    }
+    public void CalPromedio()
+    {
+        promedio =0;
+        foreach(var item in Edades)
+        {
+            this.promedio +=item;
+        }
+        this.promedio=promedio/Edades.Count;
+    }
+}
