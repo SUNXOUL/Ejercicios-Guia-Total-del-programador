@@ -1,0 +1,166 @@
+﻿@page "/"
+
+<head>
+
+    <style>
+          .Entrada{
+        display: inline-block;
+        padding: 5px;
+        align-items: center;
+    }
+    .Entrada input{
+        border-radius: 50px;
+        background-color:#D9D9D9;
+        border-color: #D9D9D9;
+        border: 15px;
+        margin: 5px;
+    }
+    .Entrada label
+    {
+        margin: 5px;
+    }
+    </style>
+</head>
+<div style="display: flex;justify-content: space-between;">
+<h1>Arreglos JAGGER </h1>
+    <h4>Promedio:@avg</h4>
+    <h4>Minimo:@min</h4>
+    <h4>Maximo:@max</h4>
+</div>
+
+
+
+        <h3> Curso A</h3>
+
+            <div class="Entrada" style="display:flex;">
+            <label>Estudiante 1 </label>
+            <input  type="number" @bind="@jagged[0][0]" placeholder="calificacion">
+            </div>
+            <br>
+            
+            <div class="Entrada" style="display:flex;">
+            <label>Estudiante 1 </label>
+            <input  type="number"  @bind="@jagged[0][1]" placeholder="calificacion">
+            </div>
+            <br>
+            
+            <div class="Entrada" style="display:flex;">
+            <label>Estudiante 1 </label>
+            <input  type="number"  @bind="@jagged[0][2]" placeholder="calificacion">
+            </div>
+            <br> 
+            
+            <div class="Entrada" style="display:flex;">
+            <label>Estudiante 1 </label>
+            <input  type="number"  @bind="@jagged[0][3]" placeholder="calificacion">
+            </div>
+            <br>  
+
+        <hr>
+
+
+        <h3> Curso B</h3>
+
+            <div class="Entrada" style="display:flex;">
+            <label>Estudiante 1 </label>
+            <input  type="number" @bind="@jagged[1][0]" placeholder="calificacion">
+            </div>
+            <br>
+            
+            <div class="Entrada" style="display:flex;">
+            <label>Estudiante 1 </label>
+            <input  type="number"  @bind="@jagged[1][1]" placeholder="calificacion">
+            </div>
+            <br>
+            
+            <br> 
+        <hr>
+
+        <h3> Curso C</h3>
+
+            <div class="Entrada" style="display:flex;">
+            <label>Estudiante 1 </label>
+            <input  type="number" @bind="@jagged[2][0]" placeholder="calificacion">
+            </div>
+            <br>
+            
+            <div class="Entrada" style="display:flex;">
+            <label>Estudiante 1 </label>
+            <input  type="number"  @bind="@jagged[2][1]" placeholder="calificacion">
+            </div>
+            <br>
+            
+            <div class="Entrada" style="display:flex;">
+            <label>Estudiante 1 </label>
+            <input  type="number"  @bind="@jagged[2][2]" placeholder="calificacion">
+            </div>
+            <br>  
+
+
+
+    <butto type="button"  @onclick="calcular"class="btn btn-primary">Calcular</butto>
+
+@code
+{
+    public string prompt{get;set;} ="INGRESE EL TAMANO DEL ARREGLO BASE";
+    public int min{get;set;}
+    public int max { get; set; }
+    public int avg { get; set; }
+
+
+    public int[][] jagged = new int[3][]
+    {
+        new int[4] ,
+        new int[2] ,
+        new int[3] 
+
+    };
+    public void calcular( )
+    {
+        promedio();
+        maximo();
+        minimo();
+    }
+    
+    public void promedio( )
+    {
+        avg =0;
+
+        for (int i = 0; i < jagged.Length; i++)
+        {
+            for (int i2 = 0; i2 < jagged[i].Length; i2++)
+            {
+                avg+=jagged[i][i2];
+            }
+        }
+        avg= avg/9;
+    }
+    public void maximo( )
+    {
+        max=jagged[0][0];
+        for (int i = 0; i < jagged.Length; i++)
+        {
+            for (int i2 = 0; i2 < jagged[i].Length; i2++)
+            {
+                if(jagged[i][i2]>max)
+                {
+                    max=jagged[i][i2];
+                }
+            }
+        }
+    }
+    public void minimo( )
+    {
+        min=jagged[0][0];
+        for (int i = 0; i < jagged.Length; i++)
+        {
+            for (int i2 = 0; i2 < jagged[i].Length; i2++)
+            {
+                if(jagged[i][i2]<min)
+                {
+                    min=jagged[i][i2];
+                }
+            }
+        }
+    }
+}
