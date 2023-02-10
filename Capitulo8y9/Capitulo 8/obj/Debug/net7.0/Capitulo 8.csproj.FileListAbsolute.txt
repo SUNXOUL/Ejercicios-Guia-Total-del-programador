@@ -1,0 +1,15 @@
+C:\Users\SUNXOUL\Documents\PROGRAMS\WebPages and C#\C#\Ejercicios-GTP\Capitulo8y9\Capitulo 8\obj\Debug\net7.0\Capitulo 8.csproj.AssemblyReference.cache
+C:\Users\SUNXOUL\Documents\PROGRAMS\WebPages and C#\C#\Ejercicios-GTP\Capitulo8y9\Capitulo 8\obj\Debug\net7.0\Capitulo 8.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SUNXOUL\Documents\PROGRAMS\WebPages and C#\C#\Ejercicios-GTP\Capitulo8y9\Capitulo 8\obj\Debug\net7.0\Capitulo 8.AssemblyInfoInputs.cache
+C:\Users\SUNXOUL\Documents\PROGRAMS\WebPages and C#\C#\Ejercicios-GTP\Capitulo8y9\Capitulo 8\obj\Debug\net7.0\Capitulo 8.AssemblyInfo.cs
+C:\Users\SUNXOUL\Documents\PROGRAMS\WebPages and C#\C#\Ejercicios-GTP\Capitulo8y9\Capitulo 8\obj\Debug\net7.0\Capitulo 8.csproj.CoreCompileInputs.cache
+C:\Users\SUNXOUL\Documents\PROGRAMS\WebPages and C#\C#\Ejercicios-GTP\Capitulo8y9\Capitulo 8\bin\Debug\net7.0\Capitulo 8.exe
+C:\Users\SUNXOUL\Documents\PROGRAMS\WebPages and C#\C#\Ejercicios-GTP\Capitulo8y9\Capitulo 8\bin\Debug\net7.0\Capitulo 8.deps.json
+C:\Users\SUNXOUL\Documents\PROGRAMS\WebPages and C#\C#\Ejercicios-GTP\Capitulo8y9\Capitulo 8\bin\Debug\net7.0\Capitulo 8.runtimeconfig.json
+C:\Users\SUNXOUL\Documents\PROGRAMS\WebPages and C#\C#\Ejercicios-GTP\Capitulo8y9\Capitulo 8\bin\Debug\net7.0\Capitulo 8.dll
+C:\Users\SUNXOUL\Documents\PROGRAMS\WebPages and C#\C#\Ejercicios-GTP\Capitulo8y9\Capitulo 8\bin\Debug\net7.0\Capitulo 8.pdb
+C:\Users\SUNXOUL\Documents\PROGRAMS\WebPages and C#\C#\Ejercicios-GTP\Capitulo8y9\Capitulo 8\obj\Debug\net7.0\Capitulo 8.dll
+C:\Users\SUNXOUL\Documents\PROGRAMS\WebPages and C#\C#\Ejercicios-GTP\Capitulo8y9\Capitulo 8\obj\Debug\net7.0\refint\Capitulo 8.dll
+C:\Users\SUNXOUL\Documents\PROGRAMS\WebPages and C#\C#\Ejercicios-GTP\Capitulo8y9\Capitulo 8\obj\Debug\net7.0\Capitulo 8.pdb
+C:\Users\SUNXOUL\Documents\PROGRAMS\WebPages and C#\C#\Ejercicios-GTP\Capitulo8y9\Capitulo 8\obj\Debug\net7.0\Capitulo 8.genruntimeconfig.cache
+C:\Users\SUNXOUL\Documents\PROGRAMS\WebPages and C#\C#\Ejercicios-GTP\Capitulo8y9\Capitulo 8\obj\Debug\net7.0\ref\Capitulo 8.dll
